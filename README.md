@@ -46,8 +46,8 @@ All SDK exceptions inherit from `RunApi\Core\Errors\RunApiException`, including 
 ## Links
 
 - Model page: https://runapi.ai/models/wan
-- SDK docs: https://runapi.ai/docs#sdk-wan
-- Product docs: https://runapi.ai/docs#wan
+- SDK docs: https://runapi.ai/docs/resources/sdks
+- Product docs: https://runapi.ai/docs/api/wan/text-to-video
 - Pricing and rate limits: https://runapi.ai/models/wan/2.2-a14b-text-to-video-turbo
 - Full catalog: https://runapi.ai/models
 - GitHub repository: https://github.com/runapi-ai/wan-php
