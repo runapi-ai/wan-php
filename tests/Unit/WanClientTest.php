@@ -34,8 +34,9 @@ final class WanClientTest extends TestCase
         $client = new WanClient(new ClientOptions(apiKey: 'k', httpClient: $transport, maxRetries: 0));
 
         self::assertSame('video_task', $client->textToVideo->create([
-            'model' => 'wan-2.7-text-to-video',
+            'model' => 'wan-2.6-text-to-video',
             'prompt' => 'A mountain landscape',
+            'multi_shots' => false,
         ])->id);
         self::assertSame('image_task', $client->textToImage->create([
             'model' => 'wan-2.7-image',
@@ -43,6 +44,10 @@ final class WanClientTest extends TestCase
         ])->id);
 
         self::assertSame('/api/v1/wan/text_to_video', $transport->requests[0]->getUri()->getPath());
+        self::assertSame(
+            ['model' => 'wan-2.6-text-to-video', 'prompt' => 'A mountain landscape', 'multi_shots' => false],
+            json_decode((string) $transport->requests[0]->getBody(), true),
+        );
         self::assertSame('/api/v1/wan/text_to_image', $transport->requests[1]->getUri()->getPath());
     }
 

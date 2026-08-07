@@ -13,7 +13,8 @@ use RunApi\Wan\Models\VideoTaskResponse;
 use RunApi\Wan\Types;
 
 /**
- * Generates videos from text prompts.
+ * Generates videos from text prompts. On WAN 2.6, multi_shots controls whether
+ * the generated video uses multiple shots with transitions instead of one continuous shot.
  */
 readonly class TextToVideo extends TypedConfiguredResource
 {
@@ -26,6 +27,7 @@ readonly class TextToVideo extends TypedConfiguredResource
      *   aspect_ratio?: string,
      *   duration_seconds?: int,
      *   output_resolution?: string,
+     *   multi_shots?: bool,
      *   callback_url?: string
      * } $params
      */
@@ -54,6 +56,7 @@ readonly class TextToVideo extends TypedConfiguredResource
      *   aspect_ratio?: string,
      *   duration_seconds?: int,
      *   output_resolution?: string,
+     *   multi_shots?: bool,
      *   callback_url?: string
      * } $params
      */

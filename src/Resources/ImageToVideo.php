@@ -13,7 +13,8 @@ use RunApi\Wan\Models\VideoTaskResponse;
 use RunApi\Wan\Types;
 
 /**
- * Generates videos driven by a source image.
+ * Generates videos driven by a source image. On WAN 2.6, multi_shots controls whether
+ * the generated video uses multiple shots with transitions instead of one continuous shot.
  */
 readonly class ImageToVideo extends TypedConfiguredResource
 {
@@ -25,6 +26,7 @@ readonly class ImageToVideo extends TypedConfiguredResource
      *   prompt?: string,
      *   first_frame_image_url?: string,
      *   audio?: bool,
+     *   multi_shots?: bool,
      *   duration_seconds?: int,
      *   output_resolution?: string,
      *   callback_url?: string
@@ -54,6 +56,7 @@ readonly class ImageToVideo extends TypedConfiguredResource
      *   prompt?: string,
      *   first_frame_image_url?: string,
      *   audio?: bool,
+     *   multi_shots?: bool,
      *   duration_seconds?: int,
      *   output_resolution?: string,
      *   callback_url?: string

@@ -13,7 +13,8 @@ use RunApi\Wan\Models\VideoTaskResponse;
 use RunApi\Wan\Types;
 
 /**
- * Modifies existing videos guided by a text prompt. The prompt describes the desired changes; a reference image can further guide the edit.
+ * Modifies existing videos guided by a text prompt. On WAN 2.6, multi_shots controls
+ * whether the generated video uses multiple shots with transitions instead of one continuous shot.
  */
 readonly class EditVideo extends TypedConfiguredResource
 {
@@ -27,6 +28,7 @@ readonly class EditVideo extends TypedConfiguredResource
      *   source_video_urls?: list<string>,
      *   aspect_ratio?: string,
      *   output_resolution?: string,
+     *   multi_shots?: bool,
      *   callback_url?: string
      * } $params
      */
@@ -56,6 +58,7 @@ readonly class EditVideo extends TypedConfiguredResource
      *   source_video_urls?: list<string>,
      *   aspect_ratio?: string,
      *   output_resolution?: string,
+     *   multi_shots?: bool,
      *   callback_url?: string
      * } $params
      */
