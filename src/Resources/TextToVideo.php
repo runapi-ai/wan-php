@@ -10,7 +10,6 @@ use RunApi\Core\RequestOptions;
 use RunApi\Core\Resources\TypedConfiguredResource;
 use RunApi\Wan\Models\CompletedVideoTaskResponse;
 use RunApi\Wan\Models\VideoTaskResponse;
-use RunApi\Wan\Types;
 
 /**
  * Generates videos from text prompts. On WAN 2.6, multi_shots controls whether
@@ -73,6 +72,6 @@ readonly class TextToVideo extends TypedConfiguredResource
      */
     public static function fromHttp(HttpClient $http): self
     {
-        return new self($http, '/api/v1/wan/text_to_video', 'wan/text-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, Types::TEXT_TO_VIDEO_MODELS, 'text-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
+        return new self($http, '/api/v1/wan/text_to_video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, 'text-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
     }
 }

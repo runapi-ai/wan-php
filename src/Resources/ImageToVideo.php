@@ -10,7 +10,6 @@ use RunApi\Core\RequestOptions;
 use RunApi\Core\Resources\TypedConfiguredResource;
 use RunApi\Wan\Models\CompletedVideoTaskResponse;
 use RunApi\Wan\Models\VideoTaskResponse;
-use RunApi\Wan\Types;
 
 /**
  * Generates videos driven by a source image. On WAN 2.6, multi_shots controls whether
@@ -75,6 +74,6 @@ readonly class ImageToVideo extends TypedConfiguredResource
      */
     public static function fromHttp(HttpClient $http): self
     {
-        return new self($http, '/api/v1/wan/image_to_video', 'wan/image-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, Types::IMAGE_TO_VIDEO_MODELS, 'image-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
+        return new self($http, '/api/v1/wan/image_to_video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, 'image-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
     }
 }

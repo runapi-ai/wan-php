@@ -10,7 +10,6 @@ use RunApi\Core\RequestOptions;
 use RunApi\Core\Resources\TypedConfiguredResource;
 use RunApi\Wan\Models\CompletedVideoTaskResponse;
 use RunApi\Wan\Models\VideoTaskResponse;
-use RunApi\Wan\Types;
 
 /**
  * Generates lip-synced talking-head videos from a portrait image and speech audio.
@@ -70,6 +69,6 @@ readonly class SpeechToVideo extends TypedConfiguredResource
      */
     public static function fromHttp(HttpClient $http): self
     {
-        return new self($http, '/api/v1/wan/speech_to_video', 'wan/speech-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, Types::SPEECH_TO_VIDEO_MODELS, 'speech-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
+        return new self($http, '/api/v1/wan/speech_to_video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, 'speech-to-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
     }
 }

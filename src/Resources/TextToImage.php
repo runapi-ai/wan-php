@@ -10,7 +10,6 @@ use RunApi\Core\RequestOptions;
 use RunApi\Core\Resources\TypedConfiguredResource;
 use RunApi\Wan\Models\CompletedImageTaskResponse;
 use RunApi\Wan\Models\ImageTaskResponse;
-use RunApi\Wan\Types;
 
 /**
  * Generates images from text prompts, with optional color palette and bounding box constraints. Supports batch generation via output_count.
@@ -68,6 +67,6 @@ readonly class TextToImage extends TypedConfiguredResource
      */
     public static function fromHttp(HttpClient $http): self
     {
-        return new self($http, '/api/v1/wan/text_to_image', 'wan/text-to-image', ImageTaskResponse::class, CompletedImageTaskResponse::class, Types::TEXT_TO_IMAGE_MODELS, 'text-to-image', ImageTaskResponse::class, CompletedImageTaskResponse::class);
+        return new self($http, '/api/v1/wan/text_to_image', ImageTaskResponse::class, CompletedImageTaskResponse::class, 'text-to-image', ImageTaskResponse::class, CompletedImageTaskResponse::class);
     }
 }

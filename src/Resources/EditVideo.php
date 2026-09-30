@@ -10,7 +10,6 @@ use RunApi\Core\RequestOptions;
 use RunApi\Core\Resources\TypedConfiguredResource;
 use RunApi\Wan\Models\CompletedVideoTaskResponse;
 use RunApi\Wan\Models\VideoTaskResponse;
-use RunApi\Wan\Types;
 
 /**
  * Modifies existing videos guided by a text prompt. On WAN 2.6, multi_shots controls
@@ -75,6 +74,6 @@ readonly class EditVideo extends TypedConfiguredResource
      */
     public static function fromHttp(HttpClient $http): self
     {
-        return new self($http, '/api/v1/wan/edit_video', 'wan/edit-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, Types::EDIT_VIDEO_MODELS, 'edit-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
+        return new self($http, '/api/v1/wan/edit_video', VideoTaskResponse::class, CompletedVideoTaskResponse::class, 'edit-video', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
     }
 }

@@ -10,7 +10,6 @@ use RunApi\Core\RequestOptions;
 use RunApi\Core\Resources\TypedConfiguredResource;
 use RunApi\Wan\Models\CompletedVideoTaskResponse;
 use RunApi\Wan\Models\VideoTaskResponse;
-use RunApi\Wan\Types;
 
 /**
  * Transfers motion from a reference video onto a subject in a source image. Two model variants are available: animate-move (keeps the original subject, applies motion) and animate-replace (swaps the subject with the reference video's subject).
@@ -68,6 +67,6 @@ readonly class Animate extends TypedConfiguredResource
      */
     public static function fromHttp(HttpClient $http): self
     {
-        return new self($http, '/api/v1/wan/animate', 'wan/animate', VideoTaskResponse::class, CompletedVideoTaskResponse::class, Types::ANIMATE_MODELS, 'animate', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
+        return new self($http, '/api/v1/wan/animate', VideoTaskResponse::class, CompletedVideoTaskResponse::class, 'animate', VideoTaskResponse::class, CompletedVideoTaskResponse::class);
     }
 }
